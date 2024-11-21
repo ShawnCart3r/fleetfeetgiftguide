@@ -1,4 +1,6 @@
 /* General Reset */
+/* General Reset */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,26 +9,28 @@
 
 body, html {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    min-height: 100vh; /* Ensures the page takes at least full viewport height */
-    width: 100%; /* Takes the full width of the viewport */
+    min-height: 100vh; /* Ensures the page takes up at least full viewport height */
+    width: 100%;
     background: #f7f9fc url('snow-background.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    overflow-y: auto; /* Allows vertical scrolling if content overflows */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    color: #333; /* Sets default text color */
+    text-align: center; /* Centers text horizontally */
 }
 
-/* Landing Page Layout */
+/* Layout without Boxes */
 .landing-container {
     width: 100%;
     max-width: 800px;
     padding: 20px;
-    margin: 20px 0; /* Adds space above and below */
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Center content with space above and below */
     text-align: center;
+    background: none; /* Removes background color */
+    border-radius: 0; /* Removes rounding */
+    box-shadow: none; /* Removes shadow */
 }
 
 /* Logo Styling */
@@ -40,28 +44,26 @@ body, html {
     height: auto;
 }
 
-/* Section Styling */
+/* Content Sections */
 .image-text-section, .carousel-wrapper {
     margin-bottom: 20px;
-    padding: 15px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 0; /* Adds vertical spacing for readability */
+    background: none; /* Removes background color */
+    box-shadow: none; /* Removes shadow */
+    border-radius: 0; /* Removes rounding */
 }
 
-/* Text Box Styling */
+/* Text Styling */
 .text-box {
-    padding: 15px;
-    background: #f7f9fc;
-    border-radius: 8px;
-    color: #333;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    padding: 0;
+    background: none; /* Removes background color */
+    color: #333; /* Default text color */
+    font-size: 1.2rem;
+    line-height: 1.8;
     font-weight: 300;
-    text-align: left;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Align text to the left for better flow */
+    box-shadow: none; /* Removes shadow */
     overflow-wrap: break-word; /* Ensures long words break properly */
-    word-wrap: break-word;
 }
 
 .text-box h2 {
@@ -75,8 +77,8 @@ body, html {
 
 /* Carousel Styling */
 .carousel-wrapper {
-    padding: 20px;
-    max-width: 1000px;
+    padding: 20px 0; /* Keeps spacing without adding boxed effect */
+    max-width: 100%; /* Allows it to take up full width if needed */
     margin: 0 auto;
 }
 
@@ -85,10 +87,9 @@ body, html {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 0; /* Removes padding */
+    background: none; /* Removes background color */
+    box-shadow: none; /* Removes shadow */
 }
 
 .content-box:first-of-type {
@@ -99,8 +100,7 @@ body, html {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
-    border-radius: 8px;
-    border: 2px solid #1E90FF;
+    border: none; /* Removes border */
     object-fit: cover;
 }
 
