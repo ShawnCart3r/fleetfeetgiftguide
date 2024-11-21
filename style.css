@@ -1,39 +1,37 @@
-/* General Reset */
-/* General Reset */
-/* General Reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Base Styles */
 body, html {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    min-height: 100vh; /* Ensures the page takes up at least full viewport height */
+    min-height: 100vh;
     width: 100%;
-    background: #f7f9fc url('snow-background.jpg') no-repeat center center fixed;
+    color: #333;
+    background: linear-gradient(to bottom, rgba(247, 249, 252, 0.8), rgba(247, 249, 252, 1)), 
+                url('snow-background.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    overflow-y: auto; /* Allows scrolling if content overflows */
-    color: #333; /* Sets default text color */
-    text-align: center; /* Centers text horizontally */
+    overflow-y: auto;
+    text-align: center;
 }
 
-/* Layout without Boxes */
+/* Main Content Container */
 .landing-container {
     width: 100%;
     max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
-    margin: 20px auto; /* Center content with space above and below */
     text-align: center;
-    background: none; /* Removes background color */
-    border-radius: 0; /* Removes rounding */
-    box-shadow: none; /* Removes shadow */
+    animation: fadeIn 1.5s ease-out;
 }
 
-/* Logo Styling */
+/* Logo */
 .logo-container {
     margin-bottom: 20px;
 }
@@ -42,43 +40,41 @@ body, html {
     margin-top: 30px;
     max-width: 100%;
     height: auto;
+    animation: slideIn 1.2s ease-out;
 }
 
-/* Content Sections */
+/* Section Styles */
 .image-text-section, .carousel-wrapper {
     margin-bottom: 20px;
-    padding: 15px 0; /* Adds vertical spacing for readability */
-    background: none; /* Removes background color */
-    box-shadow: none; /* Removes shadow */
-    border-radius: 0; /* Removes rounding */
+    padding: 15px 0;
 }
 
 /* Text Styling */
 .text-box {
-    padding: 0;
-    background: none; /* Removes background color */
-    color: #333; /* Default text color */
+    color: #333;
     font-size: 1.2rem;
     line-height: 1.8;
     font-weight: 300;
-    text-align: left; /* Align text to the left for better flow */
-    box-shadow: none; /* Removes shadow */
-    overflow-wrap: break-word; /* Ensures long words break properly */
+    text-align: left;
+    animation: fadeInUp 1s ease-out;
+    overflow-wrap: break-word;
 }
 
 .text-box h2 {
     color: #1E90FF;
     margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
 .text-box p {
     color: #555;
+    margin-bottom: 15px;
 }
 
-/* Carousel Styling */
+/* Carousel */
 .carousel-wrapper {
-    padding: 20px 0; /* Keeps spacing without adding boxed effect */
-    max-width: 100%; /* Allows it to take up full width if needed */
+    padding: 20px 0;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -87,21 +83,25 @@ body, html {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 0; /* Removes padding */
-    background: none; /* Removes background color */
-    box-shadow: none; /* Removes shadow */
 }
 
 .content-box:first-of-type {
     display: flex;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .carousel-image {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
-    border: none; /* Removes border */
     object-fit: cover;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.carousel-image:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.3));
 }
 
 /* Carousel Navigation Dots */
@@ -126,3 +126,36 @@ body, html {
     transform: scale(1.2);
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
