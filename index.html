@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean and Simple Layout with Borders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="/image/fleetfeet.jpg" alt="Logo" class="logo">
+        </div>
+
+        <!-- Image and Paragraph Section -->
+        <div class="image-text-section">
+            <div class="text-box">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel-wrapper">
+            <div class="content-box" id="content-1">
+                <img src="image/gift1.jpg" alt="Image 1" class="carousel-image">
+                <div class="text-box">
+                    <h2>First Title</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+
+            <div class="content-box" id="content-2">
+                <img src="image/gift2.jpg" alt="Image 2" class="carousel-image">
+                <div class="text-box">
+                    <h2>Second Title</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+
+            <div class="content-box" id="content-3">
+                <img src="image/gift3.jpg" alt="Image 3" class="carousel-image">
+                <div class="text-box">
+                    <h2>Third Title</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="content-box" id="content-3">
+                <img src="image/gift4.jpg" alt="Image 4" class="carousel-image">
+                <div class="text-box">
+                    <h2>Third Title</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+
+            <div class="dots">
+                <span class="dot active" onclick="showContent(1)"></span>
+                <span class="dot" onclick="showContent(2)"></span>
+                <span class="dot" onclick="showContent(3)"></span>
+                <span class="dot" onclick="showContent(4)"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
