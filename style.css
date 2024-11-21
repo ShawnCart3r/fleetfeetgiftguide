@@ -29,11 +29,11 @@ body, html {
     margin: 20px auto;
     padding: 20px;
     text-align: center;
-    animation: fadeIn 1.5s ease-out;
-    border: 2px solid rgba(255, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.8);
+    border: 4px solid rgba(0, 128, 0, 0.4); /* Holiday Green Border */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-out;
 }
 
 /* Logo */
@@ -45,7 +45,7 @@ body, html {
     margin-top: 30px;
     max-width: 100%;
     height: auto;
-    animation: slideIn 1.2s ease-out;
+    animation: bounceIn 1.2s ease-out;
 }
 
 /* Section Styles */
@@ -68,12 +68,12 @@ body, html {
 .text-box h2 {
     color: #D7263D; /* Festive Red */
     margin-bottom: 10px;
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.6rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .text-box p {
-    color: #555;
+    color: #055C12; /* Deep Holiday Green */
     margin-bottom: 15px;
 }
 
@@ -101,14 +101,15 @@ body, html {
     height: auto;
     margin-bottom: 10px;
     object-fit: cover;
-    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
-    border: 3px solid #1E90FF; /* Frosty Blue Border */
-    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 10px;
+    border: 4px solid #D7263D; /* Festive Red Border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .carousel-image:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.3));
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Carousel Navigation Dots */
@@ -129,11 +130,11 @@ body, html {
 }
 
 .dot.active, .dot:hover {
-    background: #1E90FF; /* Frosty Blue */
+    background: #055C12; /* Holiday Green */
     transform: scale(1.2);
 }
 
-/* Holiday Snow Animation */
+/* Holiday Details */
 @keyframes snowfall {
     from {
         background-position: 0 0;
@@ -166,13 +167,17 @@ body, html {
     }
 }
 
-@keyframes slideIn {
-    from {
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
         opacity: 0;
-        transform: translateX(-30px);
     }
-    to {
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
         opacity: 1;
-        transform: translateX(0);
     }
 }
