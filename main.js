@@ -1,28 +1,50 @@
-let currentIndex = 0;
-        const contentBoxes = document.querySelectorAll('.content-box');
-        const dots = document.querySelectorAll('.dot');
-        let autoSlideInterval;
+document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let currentIndex = 0;
+    let autoSlideInterval;
 
-        function showContent(index) {
-            contentBoxes.forEach((box, i) => {
-                box.style.display = i === index - 1 ? 'flex' : 'none';
-            });
-
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[index - 1].classList.add('active');
-
-            currentIndex = index - 1;
-        }
-
-        function autoSlide() {
-            autoSlideInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % contentBoxes.length;
-                showContent(currentIndex + 1);
-            }, 3000);
-        }
-
-        dots.forEach((dot, idx) => {
-            dot.addEventListener('click', () => showContent(idx + 1));
+    const updateCarousel = (index) => {
+        items.forEach((item, i) => {
+            item.style.display = i === index ? 'flex' : 'none';
         });
 
-        window.onload = autoSlide;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+
+        currentIndex = index;
+    };
+
+    const autoSlide = () => {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+            const nextIndex = (currentIndex + 1) % items.length;
+            updateCarousel(nextIndex);
+        }, 3000);
+    };
+
+    const handleUserInteraction = (index) => {
+        clearInterval(autoSlideInterval);
+        updateCarousel(index);
+        setTimeout(autoSlide, 5000); // Resume auto-slide after 5 seconds
+    };
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            const index = parseInt(dot.dataset.index, 10);
+            handleUserInteraction(index);
+        });
+    });
+
+    items.forEach(item => {
+        const image = item.querySelector('img');
+        image.addEventListener('click', () => {
+            const index = parseInt(item.dataset.index, 10);
+            handleUserInteraction(index);
+        });
+    });
+
+    updateCarousel(0);
+    autoSlide();
+});
+
