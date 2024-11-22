@@ -77,11 +77,14 @@ body, html {
 .carousel-image {
     max-width: 100%;
     border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 4px solid rgba(70, 130, 180, 0.6);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     cursor: pointer;
 }
 
+/* Carousel Arrows */
 /* Carousel Arrows */
 .carousel-arrow {
     position: absolute;
@@ -90,8 +93,8 @@ body, html {
     background: linear-gradient(45deg, #4a4a4a, #1a1a1a);
     color: white;
     border: none;
-    font-size: 2.5rem;
-    padding: 10px;
+    font-size: 5vw; /* Relative to screen width */
+    padding: 2vw; /* Relative padding */
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(26, 26, 26, 0.4);
@@ -100,17 +103,25 @@ body, html {
 }
 
 .carousel-arrow-prev {
-    left: 10px;
+    left: 2vw; /* Relative positioning */
 }
 
 .carousel-arrow-next {
-    right: 10px;
+    right: 2vw; /* Relative positioning */
 }
 
 .carousel-arrow:hover {
     background: linear-gradient(45deg, #FFD700, #FF6347);
     transform: scale(1.2);
     box-shadow: 0 6px 15px rgba(255, 140, 0, 0.6);
+}
+
+/* Responsive Design for Arrows */
+/* Hide arrows in portrait mode on mobile */
+@media (max-width: 768px) and (orientation: portrait) {
+    .carousel-arrow {
+        display: none; /* Hide arrows */
+    }
 }
 
 /* Carousel Dots */
@@ -140,6 +151,12 @@ body, html {
 }
 
 /* Gift List */
+.text-box p {
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Add space below the paragraph */
+}
+
 .gift-list {
     list-style: none;
     padding: 0;
@@ -150,9 +167,13 @@ body, html {
     font-size: 0.85em;
 }
 
+
 .gift-list li {
     margin-bottom: 5px;
     break-inside: avoid;
+}
+.gift-card-section h2 {
+    margin-bottom: 20px; /* Add space below the h2 */
 }
 
 /* Gift Card Section */
