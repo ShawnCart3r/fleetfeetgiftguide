@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         autoSlideInterval = setInterval(() => {
             const nextIndex = (currentIndex + 1) % items.length;
             updateCarousel(nextIndex);
-        }, 5000);
+        }, 7000);
     };
 
     const handleUserInteraction = (index) => {
