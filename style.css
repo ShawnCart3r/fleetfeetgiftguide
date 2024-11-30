@@ -111,9 +111,9 @@ body, html {
 }
 
 .carousel-arrow:hover {
-    background: linear-gradient(45deg, #FFD700, #FF6347);
+    background: linear-gradient(45deg, rgb(2, 67, 141), grey);
     transform: scale(1.2);
-    box-shadow: 0 6px 15px rgba(255, 140, 0, 0.6);
+    box-shadow: 0 6px 15px rgba(22, 56, 128, 0.6);
 }
 
 /* Responsive Design for Arrows */
